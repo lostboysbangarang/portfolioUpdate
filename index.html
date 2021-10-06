@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-iKbFRxucmOHIcpWdX9NTZ5WETOPm0Goy0WmfyNcl52qSYtc2Buk0NCe6jU1sWWNB" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/dualFont.css" type="text/css">
+    
+</head>
+<body>
+    <nav class="navigation">
+        <ul class="navigation_list">
+            <li class="work" title="Prvious Work" onclick="scaleWork(document.getElementsByClassName('card'), document.getElementsByClassName('card_body'), document.getElementsByClassName('card_work'), document.getElementsByClassName('card_header'), 0)">
+                <i class="fal fa-briefcase"></i>
+            </li>
+            <li class="about" title="About Me" onclick="scaleWork(document.getElementsByClassName('card'), document.getElementsByClassName('card_body'), document.getElementsByClassName('card_about'), document.getElementsByClassName('card_header'), 1)">
+                <i class="fal fa-address-card"></i>
+            </li>
+            <li class="contact" title="How To Contact Me" onclick="scaleWork(document.getElementsByClassName('card'), document.getElementsByClassName('card_body'), document.getElementsByClassName('card_contact'), document.getElementsByClassName('card_header'), 2)">
+                <i class="fal fa-phone-office"></i>
+            </li>
+        </ul>
+    </nav>
+    <div class="wrapper">
+        <div class="background">
+            <div class="background_outter">
+                <img src="./resources/ringOne.webp" alt="maya background art">
+            </div>
+        </div>
+        <div class="background">
+            <div class="background_mid">
+                <img src="./resources/ring.webp" alt="maya background art">
+            </div>
+        </div>
+        <div class="background">
+            <div class="background_inner">
+                <img src="./resources/face.webp" alt="maya background art">
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="card" id="card">
+            <div class="card_inner">
+                <div class="card_face card_front" onclick="flip(document.getElementsByClassName('card_inner'))">
+                    <h2>Developers Card</h2>
+                </div>
+                <div class="card_face card_back">
+                    <div class="card_content" >
+                        <div class="card_header" onclick="flip(document.getElementsByClassName('card_inner'))">
+                            <div class="card_header_img">
+                                <img src="./resources/token_1.webp" alt="Profile picture">
+                            </div>
+                            <h2>Hayden Lugo</h2>
+                            <h3 class="copyPasta">Click to copy...</h3>
+                        </div>
+                        <div class="card_body">
+                            <h3>Code Monkey</h3>
+                            <p>Hello! My name is Hayden, and this is my portfolio website.</p>
+                            <p>Please, take a minute and select the icons in the nav bar to the left (or top for moblie) for information like my previous projects, how to contact, and more about.</p>
+                            
+                        </div>
+                        <div class="card_work">
+                            <div class="card_work_exp exp_1" onmouseenter="hoverProj(document.getElementsByClassName('exp_1'))" onmouseleave="reverseHover(document.getElementsByClassName('exp_1'))">
+                                <div class="card_work_exp_img">
+                                    <a href="https://lostboysbangarang.github.io/OhMyFoodsMkIV/">
+                                        <img src="./resources/OhMyFoods.webp" alt="Oh My Foods Website" title="Oh My Foods">
+                                    </a>
+                                </div>                                    
+                            </div>
+                            <div class="card_work_exp exp_2" onmouseenter="hoverProj(document.getElementsByClassName('exp_2'))" onmouseleave="reverseHover(document.getElementsByClassName('exp_2'))">
+                                <div class="card_work_exp_img">
+                                    <a href="https://lydiawdesign.github.io/Movie-Picker-App/">
+                                        <img src="./resources/groovyMovie.webp" alt="Movie picker app" title="Movie Picker App">
+                                    </a>
+                                </div>                                
+                            </div>
+                            <div class="card_work_exp exp_3" onmouseenter="hoverProj(document.getElementsByClassName('exp_3'))" onmouseleave="reverseHover(document.getElementsByClassName('exp_3'))">
+                                <div class="card_work_exp_img">
+                                    <a href="https://lostboysbangarang.github.io/Code_Quiz/">
+                                        <img src="./resources/codeQuiz.webp" alt="Code Quiz" title="Code Quiz">
+                                    </a>
+                                </div>                                
+                            </div>
+                            <div class="card_work_exp exp_4" onmouseenter="hoverProj(document.getElementsByClassName('exp_4'))" onmouseleave="reverseHover(document.getElementsByClassName('exp_4'))">
+                                <div class="card_work_exp_img">
+                                    <a href="https://lostboysbangarang.github.io/weatherApp/">
+                                        <img src="./resources/weather.webp" alt="Weather App" title="Weather App">
+                                    </a>
+                                </div>                                
+                            </div>
+                        </div>
+                        <div class="card_about">
+
+                        </div>
+                        <div class="card_contact">
+                            <div class="card_contact_me">
+                                <i class="fal fa-mobile-android" onclick="copyText(document.getElementsByClassName('me_1'))" onmouseenter="hoverIcons(document.getElementsByClassName('fa-mobile-android'), document.getElementsByClassName('me_1'))" onmouseleave="hoverReverseIcons(document.getElementsByClassName('fa-mobile-android'), document.getElementsByClassName('me_1'))"></i>
+                                <div class="me me_1" data-value="+1.614.725.7238">
+                                    Phone N°
+                                </div>
+                            </div>
+                            <div class="card_contact_me">
+                                <i class="fal fa-mail-bulk" onclick="copyText(document.getElementsByClassName('me_2'))" onmouseenter="hoverIcons(document.getElementsByClassName('fa-mail-bulk'), document.getElementsByClassName('me_2'))" onmouseleave="hoverReverseIcons(document.getElementsByClassName('fa-mail-bulk'), document.getElementsByClassName('me_2'))"></i>
+                                <div class="me me_2" data-value="Hayden@LugoWebDevelopment.com">
+                                    Email
+                                </div>
+                            </div>
+                            <div class="card_contact_me">
+                                <i class="fab fa-linkedin" onclick="copyText(document.getElementsByClassName('me_3'))" onmouseenter="hoverIcons(document.getElementsByClassName('fab fa-linkedin'), document.getElementsByClassName('me_3'))" onmouseleave="hoverReverseIcons(document.getElementsByClassName('fab fa-linkedin'), document.getElementsByClassName('me_3'))"></i>
+                                <div class="me me_3" data-value="https://www.linkedin.com/in/lugowebdevelopment/">
+                                    Linkedin
+                                </div>
+                            </div>
+                            <div class="card_contact_me">
+                                <i class="fab fa-discord" onclick="copyText(document.getElementsByClassName('me_4'))" onmouseenter="hoverIcons(document.getElementsByClassName('fab fa-discord'), document.getElementsByClassName('me_4'))" onmouseleave="hoverReverseIcons(document.getElementsByClassName('fab fa-discord'), document.getElementsByClassName('me_4'))"></i>
+                                <div class="me me_4" data-value="KittyHungalingus#6053">
+                                    Discord
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
+<script src="./js/scripts.js"></script>
